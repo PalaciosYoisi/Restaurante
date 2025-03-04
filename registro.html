@@ -11,24 +11,18 @@
     <div class="form-container">
         <h2>Registro</h2>
 
-        <form action="conexion/registro_p.php" method="POST">
+        <form action="conexion/registro.php" method="POST">
             <label for="nombre">Nombre Completo:</label>
             <input type="text" id="nombre" name="nombre" required>
 
             <label for="correo">Correo Electrónico:</label>
             <input type="email" id="correo" name="correo" required>
 
-            <label for="username">Nombre de Usuario:</label>
-            <input type="text" id="username" name="username" required>
+            <label for="username">Telefono:</label>
+            <input type="text" id="telefono" name="telefono" required> 
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-
-            <label for="rol">Rol:</label>
-            <select id="rol" name="rol" required>
-                <option value="cliente">Cliente</option>
-                <option value="empleado">Empleado</option>
-            </select>
+            <!-- <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required> -->
 
             <button type="submit">Registrarse</button>
 

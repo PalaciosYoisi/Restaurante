@@ -17,24 +17,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nombre = trim($_POST["nombre"]);
     $correo = trim($_POST["correo"]);
-    $username = trim($_POST["username"]);
-    $password = trim($_POST["password"]);
-    $rol = trim($_POST["rol"]); 
+    $telefono = trim($_POST["telefono"]);
 
-    if (empty($nombre) || empty($correo) || empty($username) || empty($password) || empty($rol)) {
+    if (empty($nombre) || empty($correo) || empty($telefono)) {
         die("Error: Todos los campos son obligatorios.");
     }
 
     // Encriptar la contraseña
-    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+   // $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO usuarios (nombre, correo, username, password, rol) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO clientes (nombre_cliente, correo, telefono) VALUES (?, ?, ?)";
 
     if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("sssss", $nombre, $correo, $username, $password_hash, $rol);
+        $stmt->bind_param("sss", $nombre, $correo, $telefono);
         if ($stmt->execute()) {
 
-            header("Location: ../login_parqueadero.html");
+            header("Location: ../login.html");
             exit();
 
         } else {
