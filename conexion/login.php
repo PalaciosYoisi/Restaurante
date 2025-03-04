@@ -9,7 +9,7 @@ if(!$conexion){
 }
 #3 establecer comando sql
 
-$sql = "select nombre_cliente, correo from clientes where nombre_cliente='".$_POST['nombre']."' and correo='".$_POST['correo']."'";
+$sql = "select nombre_empleado, correo from empleados where nombre_empleado='".$_POST['nombre']."' and correo='".$_POST['correo']."'";
 
 
 #4 ejecutar el comando
